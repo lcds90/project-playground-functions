@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 * {
-    margin: 0;
     font-family: 'PT Serif', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-html {
-    width:100%;
-    height: 100vh;
-}
-
-body {
+html, body {
     width:100%;
     height: 100%;
 }
@@ -19,43 +16,41 @@ header {
     position:sticky;
     top: 0;
     background: #343F78;
-    height: 50px;
+    /* height: 50px; */
     z-index:25;
     text-align: center;
     color: white;
     border-bottom: 2px solid black;
     box-shadow: 0 5px 2px rgba(0, 0, 0, 0.25);
     font-weight: 700;
+    width: 100%;
 }
 
-header h1 {
-    margin-left: 25px;
-}
-
-article {
-    width:1fr;
-
-    display: grid;
-    gap: 15px;
-
-    margin:25px;
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 article#functions {
+    width: 100%;
+    display: grid;
+    gap: 25px;
+    padding-inline: 25px;
     height: 100%;
     grid-template-columns: 1fr;
 }
 
 main > article > section {
+    width: 100%;
     border-block: #343F78 5px solid;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 200px;
+    height: 100%;
     border-radius: 15px;
-    padding: 25px;
     filter: drop-shadow(.5px .5px 0 rgb(0,0,0,0.25));
     opacity: 1;
 }
@@ -97,6 +92,7 @@ main > article > section > h3 {
 section.codeAndExplanation {
     font-style: italic;
     font-weight: 300;
+    width: 100%;
     height: 125px;
     overflow-y: auto;
     padding: 5px;
@@ -123,6 +119,11 @@ input, select, option {
 }
 
 @media screen and (min-width: 600px) {
+
+    main > article > section {
+        padding: 25px;
+    }
+
     article#functions {
         grid-template-columns: 1fr 1fr;
     }
